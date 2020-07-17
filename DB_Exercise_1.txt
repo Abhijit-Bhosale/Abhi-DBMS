@@ -1,0 +1,121 @@
+1)
+create table SEMP
+(
+EMPNO CHAR(4),
+EMPNAME CHAR(20),
+BASIC FLOAT(9,2),
+DEPTNO CHAR(2),
+DEPTHEAD CHAR(4) ); 
+
+
+
+2)
+create table SDEPT
+(
+DEPTNO CHAR(2),
+DEPTNAME CHAR(15) );
+
+
+
+3)
+insert into SDEPT
+values(10,'Development');
+
+insert into SDEPT
+values(20,'Training');
+
+
+
+4)
+insert into SEMP
+values('0001', 'SUNIL', 6000, '10',NULL);
+
+insert into SEMP
+values('0002', 'HIREN', 8000, '20',NULL);
+
+insert into SEMP
+values('0003', 'ALI', 4000, '10','0001');
+
+insert into SEMP
+values('0004', 'GEORGE', 6000, NULL,'0002');
+
+
+5)
+create table SUPP
+(
+`S#` char(4),
+Sname varchar(25),
+Status int,
+City char(15) );
+
+create table PARTS
+(
+`P#` char(4),
+Pname varchar(25),
+Color varchar(25),
+Weight float(5,2),
+City char(15) );
+
+create table PROJECTS
+(
+`J#` char(4),
+Jname varchar(25),
+City char(15) );
+
+create table SUPPLIER_PARTS_PROJECT
+(
+`S#` char(4),
+`P#` char(4),
+`J#` char(4),
+Qty float(5,2) );
+
+
+insert into supp
+values('S1','Abhi',10,'Kolhapur'),
+('S2','Satish',20,'Satara'),
+('S3','Adinath',30,'Pune'),
+('S4','Rahul',40,'Mumbai');
+
+insert into parts
+values('P1','Part A','Yellow',214.22,'Kolhapur'),
+('P2','Part B','Blue',317.22,'Pune'),
+('P3','Part C','Red',451.23,'Satara'),
+('P4','Part D','Orange',107.56,'Mumbai');
+
+insert into projects
+values('J1','ABC','Kolhapur'),
+('J2','BCD','Satara'),
+('J3','CDE','Pune'),
+('J4','DEF','Mumbai');
+
+select * from SUPPLIER;
+
+6)
+select `S#`, Sname from SUPP ;
+
+7)
+select Pname,Color from parts where City="Kolhapur" ;
+
+8)
+select Sname from supp where city="Kolhapur" ;
+
+9)
+select Sname from supp where City="kolhapur" or "satara" ;
+
+10)
+select Jname from projects where City = "Mumbai" ;
+
+11)
+select Pname, Weight from parts where Weight>100 and 200>Weight ; 
+
+12)
+select Sname, Status from Supp where Status >= 20 ;
+
+13)
+select Sname from Supp where City = "Kolhapur" ;
+
+14)
+select City from supp ;
+
+15)
+select  Weight as "GRAMS" , Weight/1000 as "MILLIGRAMS" , Weight*1000 as "KILOGRAMS" from parts;

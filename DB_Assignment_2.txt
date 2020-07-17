@@ -1,0 +1,20 @@
+1) Which field of the Customers table is the primary key?
+
+==>> Cnum is primary key of Customer Table.
+
+2) What is the 4th column of the Customers table?
+
+==>> Rating id 4TH column of Customer Table.
+
+3)What is another word for row? For column?
+
+==>>
+row== tuple, entity, pportunity.
+column== Attribute, Method.
+
+4) Why isn’t it possible to see the first five rows of a table?
+
+==>>row of the table are not stored sequentially rows of table are scatterd allover 
+the DB server HD.
+	whene you insert ingo table, wherever the system find fee space in the DB Server HD
+it will store row there.

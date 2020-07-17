@@ -1,0 +1,15 @@
+1) Does ANSI recognize the data type DATE?
+==>>YES
+default date format is= YYYY-MM-DD.
+
+2) Which subdivision of SQL is used to insert values in tables?
+
+    1) DDL(Data Defination Language) (create, Drop, Alter).
+    2) DML(Data Manipulation Language) (Insert, update, Delete).
+    3) DCL(Data Control Language) (Grant,Revoke)
+    4) DQL(Data Query Language) (select)
+	
+    5)Not ANSI Standard
+       i) DTL(Data transuction language)
+       ii) TCL (Transaction Control Language)
+
