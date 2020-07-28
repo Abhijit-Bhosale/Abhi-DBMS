@@ -1,0 +1,73 @@
+1. Display the Supplier name and the Quantity sold
+==>>
+select supplier.sname,spj.quality from spj,supplier where supplier.`s#`=spj.`s#` 
+group by supplier.`s#`;
+
+
+2. Display the Part name and Quantity sold.
+==>>
+select parts.pname,spj.quality from spj,parts where parts.`p#`=spj.`p#` 
+group by parts.`p#`;
+
+
+3. Display the Project name and Quantity sold. 
+==>>
+select projects.jname,spj.quality from spj,projects where projects.`j#`=spj.`j#`
+ group by projects.`j#`;
+
+
+4. Display the Supplier name, Part name, Project name and Quantity sold. 
+==>>
+select distinct sname,pname,jname,quality from supplier,parts,projects,spj where supplier.`s#`=spj.`s#` 
+and parts.`p#`=spj.`p#`=projects.`j#`=spj.`j#` 
+group by sname,pname,jname limit 10;
+
+
+
+5. Display the Supplier name, Supplying Parts to a Project in the same City. 
+==>>
+select sname,pname,jname from supplier,parts,projects where supplier.city=parts.city
+ and parts.city=projects.city;
+
+
+
+6. Display the Part name that is ‘Red’ is color, and the Quantity sold. 
+==>>
+select pname,quality from parts,spj where parts.color='red' and parts.`p#`=spj.`p#`;
+
+
+7. Display all the Quantity sold by Suppliers with the Status = 20. 
+==>>
+select distinct sname,quality from supplier,spj 
+where supplier.status='20' and supplier.`s#`=spj.`s#`;
+
+
+
+8. Display all the Parts and Quantity with a Weight > 14. 
+==>>
+select distinct pname,quality from parts,spj where parts.weight>14 and
+ parts.`p#`=spj.`p#`;
+
+
+
+9. Display all the Project names and City, which has bought more than 500 Parts. 
+==>>
+select jname "project name",projects.city from projects,spj,parts where parts.`p#`=spj.`p#`
+ and projects.`j#`=spj.`j#` and spj.quality>500;
+
+
+10. Display all the Part names and Quantity sold that have a Weight less than 15. 
+==>>
+select parts.pname,spj.quality,parts.weight from parts,spj where parts.weight<15 and
+ parts.`p#`=spj.`p#`;
+
+
+11. Display all the Employee names and the name of their Managers. 
+==>>
+select e1.ename Empname,
+       e2.eName Mgr
+     from emp e1
+     inner join emp e2
+     on e1.mgr = e2.empno;
+
+
